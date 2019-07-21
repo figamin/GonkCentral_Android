@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GonkCentralDroid1</string>
+    <string name="firstGonkUser">iPass User ID</string>
+    <string name="pword">Password</string>
+    <string name="welcome">Welcome to Gonk Central.</string>
+    <string name="loginb">LOG IN</string>
+</resources>
