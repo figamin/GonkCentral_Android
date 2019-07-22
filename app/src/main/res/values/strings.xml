@@ -4,4 +4,8 @@
     <string name="pword">Password</string>
     <string name="welcome">Welcome to Gonk Central.</string>
     <string name="loginb">LOG IN</string>
+    <string name="placeh1">Student Info Placeholder</string>
+    <string name="placeh2">Schedule Placeholder</string>
+    <string name="placeh3">Attendance Placeholder</string>
+    <string name="placeh4">Grades Placeholder</string>
 </resources>

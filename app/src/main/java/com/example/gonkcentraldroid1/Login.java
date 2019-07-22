@@ -1,5 +1,6 @@
 package com.example.gonkcentraldroid1;
 
+import android.content.Intent;
 import android.net.IpPrefix;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -8,15 +9,16 @@ import android.view.View;
 import android.widget.*;
 
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.net.URL;
 
 public class Login extends AppCompatActivity {
 
-    TextView titleText;
-    ProgressBar loading;
-    Button loginButton;
-    AutoCompleteTextView userID, password;
-
+    private TextView titleText;
+    private ProgressBar loading;
+    private Button loginButton;
+    private AutoCompleteTextView userID, password;
+    private boolean loginStatus = false;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -47,14 +49,12 @@ public class Login extends AppCompatActivity {
                     loginButton.setVisibility(View.GONE);
                     titleText.setText("Loading...");
                     loading.setVisibility(View.VISIBLE);
-                    LoginTask scrapem = new LoginTask();
-                    scrapem.execute(userID.getText().toString(), password.getText().toString());
-
+                    new LoginTask(Login.this).execute(userID.getText().toString(), password.getText().toString());
                 }
             }
         });
     }
-    void checkLogin(Boolean result)
+    private void checkLogin(Boolean result)
     {
         Toast message;
         if(!result)
@@ -64,10 +64,19 @@ public class Login extends AppCompatActivity {
         else
         {
             message = Toast.makeText(getApplicationContext(), "Login succeeded.", Toast.LENGTH_SHORT);
+            Intent intention = new Intent(this, MainInterface.class);
+            startActivity(intention);
         }
         message.show();
     }
-    private class LoginTask extends AsyncTask<String, Void, Boolean>{
+    private static class LoginTask extends AsyncTask<String, Void, Boolean>{
+
+        private WeakReference<Login> reference;
+
+        LoginTask(Login context)
+        {
+            reference = new WeakReference<>(context);
+        }
         @Override
         protected Boolean doInBackground(String... strings)
         {
@@ -91,7 +100,12 @@ public class Login extends AppCompatActivity {
         @Override
         protected void onPostExecute(Boolean result)
         {
-            checkLogin(result);
+            Login aliveLogin = reference.get();
+            if(aliveLogin == null || aliveLogin.isFinishing())
+            {
+                return;
+            }
+            aliveLogin.checkLogin(result);
         }
     }
 }
