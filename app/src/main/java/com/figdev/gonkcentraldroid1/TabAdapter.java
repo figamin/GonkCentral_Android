@@ -1,4 +1,4 @@
-package com.example.gonkcentraldroid1;
+package com.figdev.gonkcentraldroid1;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -25,17 +25,13 @@ public class TabAdapter extends FragmentPagerAdapter {
         switch (pos)
         {
             case 0:
-                StudentInfoTab studentInfoTab = new StudentInfoTab();
-                return studentInfoTab;
+                return new StudentInfoTab();
             case 1:
-                ScheduleTab scheduleTab = new ScheduleTab();
-                return scheduleTab;
+                return new ScheduleTab();
             case 2:
-                AttendanceTab attendanceTab = new AttendanceTab();
-                return attendanceTab;
+                return new AttendanceTab();
             case 3:
-                GradesTab gradesTab = new GradesTab();
-                return gradesTab;
+                return new GradesTab();
             default:
                 return null;
         }

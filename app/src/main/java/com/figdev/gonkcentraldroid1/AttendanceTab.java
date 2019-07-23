@@ -1,4 +1,4 @@
-package com.example.gonkcentraldroid1;
+package com.figdev.gonkcentraldroid1;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,11 +11,11 @@ import android.view.ViewGroup;
  * 7/21/19
  */
 
-public class ScheduleTab extends Fragment {
+public class AttendanceTab extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.scheduletab, container, false);
+        return inflater.inflate(R.layout.attendancetab, container, false);
     }
 }

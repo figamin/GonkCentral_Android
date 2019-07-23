@@ -8,4 +8,16 @@
     <string name="placeh2">Schedule Placeholder</string>
     <string name="placeh3">Attendance Placeholder</string>
     <string name="placeh4">Grades Placeholder</string>
+
+    <string name="sinfo1">Name:</string>
+    <string name="sinfo2">Age:</string>
+    <string name="sinfo3">Birthplace:</string>
+    <string name="sinfo4">DOB:</string>
+    <string name="sinfo5">School Email:</string>
+    <string name="sinfo6">Ethnicity:</string>
+    <string name="sinfo7">Locker Number:</string>
+    <string name="sinfo8">Locker Combo:</string>
+    <string name="sinfo9">Phone Number:</string>
+    <string name="sinfo10">Bus Route:</string>
+    <string name="sinfo11">Guidance Counselor:</string>
 </resources>

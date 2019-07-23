@@ -1,4 +1,4 @@
-package com.example.gonkcentraldroid1;
+package com.figdev.gonkcentraldroid1;
 
 import java.io.BufferedReader;
 import java.io.IOException;

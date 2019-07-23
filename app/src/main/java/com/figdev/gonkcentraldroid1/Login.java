@@ -1,7 +1,6 @@
-package com.example.gonkcentraldroid1;
+package com.figdev.gonkcentraldroid1;
 
 import android.content.Intent;
-import android.net.IpPrefix;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +17,6 @@ public class Login extends AppCompatActivity {
     private ProgressBar loading;
     private Button loginButton;
     private AutoCompleteTextView userID, password;
-    private boolean loginStatus = false;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
